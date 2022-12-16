@@ -5,6 +5,7 @@
 /**
  * My first project
  * It says "Hello World!"
+ * Hello World!
  */
 class HelloWorldApp {
     public static void main(String[] args) {
