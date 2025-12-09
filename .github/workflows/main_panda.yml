@@ -1,5 +1,6 @@
-name: CI
-on: push
+name: main_panda
+on: 
+    workflow_dispatch:
 jobs:
     placeholder:
         runs-on: ubuntu-latest
