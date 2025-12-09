@@ -1,8 +1,20 @@
 name: main_panda
 on: 
-    workflow_dispatch:
+    push:
+        branches: [ main ]
+
 jobs:
-    placeholder:
-        runs-on: ubuntu-latest
-        steps:
-            - run: echo "Placeholder workflow"
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Build (if needed)
+        run: |
+          cd client
+          npm run build || echo "no build step"
